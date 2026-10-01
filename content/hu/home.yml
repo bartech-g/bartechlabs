@@ -51,7 +51,7 @@ work:
 about:
   title: Rólam
   paragraphs:
-    - A Bartech Labs egyszemélyes stúdió. Egy nyers ötletből világos terjedelmet készítek, majd megtervezem, megépítem és élesítem. Azzal beszélsz, aki a kódot írja.
+    - A Bartech Labs egyszemélyes stúdió. Egy nyers ötletből világos terjedelmet készítek, majd megtervezem, megépítem és élesítem. Azzal beszélsz, aki felel a kódért.
     - "Jól illik hozzám: MVP-k, belső eszközök, dashboardok, API-k, félbehagyott projektek megmentése. Nem nekem való: ami húszfős csapatot igényel."
   stackLabel: technológiák
   stack:
