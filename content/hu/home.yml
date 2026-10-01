@@ -1,0 +1,75 @@
+seo:
+  title: Bartech Labs — szabadúszó full-stack fejlesztés
+  description: Webalkalmazásokat építek az ötlettől az élesítésig. Frontend, backend, adatbázis, telepítés. Egy ember, egy számla.
+
+hero:
+  kicker: bartechlabs.com — szabadúszó full-stack fejlesztő
+  heading: Webalkalmazásokat építek az ötlettől az élesítésig. Frontend, backend, adatbázis, telepítés. Egy ember, egy számla.
+  ctaPrimary: Kezdjünk bele
+  ctaSecondary: Munkáim
+
+process:
+  title: Ötlet → App
+  aside: hogyan zajlik egy projekt
+  steps:
+    - title: Ötlet
+      text: Elmondod, mi a probléma. Egy hívás, egy dokumentum, egy szalvétára firkált vázlat — bármi, ami van.
+    - title: Terjedelem
+      text: Leírom, mi készül el és mi nem, ütemtervvel és fix árral.
+    - title: Tervezés
+      text: Drótvázak és képernyők a fő folyamatokhoz. Kódolás előtt jóváhagyod őket.
+    - title: Fejlesztés
+      text: Frontend, backend, adatbázis. Heti bemutató egy élő teszt linken.
+    - title: Élesítés
+      text: Telepítés, domain, monitorozás, átadási dokumentáció. Utána támogatás, ha kéred.
+
+work:
+  title: Munkák
+  aside: válogatott referenciák
+  items:
+    - name: Projekt neve
+      what: Időpontfoglaló rendszer egy klinikának
+      stack: Next.js / Postgres
+      year: "2026"
+      url: "#"
+    - name: Projekt neve
+      what: Belső készletkezelő dashboard
+      stack: React / Node / Redis
+      year: "2025"
+      url: "#"
+    - name: Projekt neve
+      what: Nyilvános API és dokumentáció egy SaaS-hez
+      stack: Python / FastAPI
+      year: "2025"
+      url: "#"
+    - name: Projekt neve
+      what: Webáruház újraépítése
+      stack: Next.js / Stripe
+      year: "2024"
+      url: "#"
+
+about:
+  title: Rólam
+  paragraphs:
+    - A Bartech Labs egyszemélyes stúdió. Egy nyers ötletből világos terjedelmet készítek, majd megtervezem, megépítem és élesítem. Azzal beszélsz, aki a kódot írja.
+    - "Jól illik hozzám: MVP-k, belső eszközök, dashboardok, API-k, félbehagyott projektek megmentése. Nem nekem való: ami húszfős csapatot igényel."
+  stackLabel: technológiák
+  stack:
+    - label: Frontend
+      value: React, Next.js, TypeScript
+    - label: Backend
+      value: Node.js, Python, REST, GraphQL
+    - label: Adatok
+      value: PostgreSQL, Redis, Prisma
+    - label: Infra
+      value: Docker, AWS, Vercel, CI/CD
+
+contact:
+  title: Kapcsolat
+  intro: Írd le az ötletet néhány sorban. Két munkanapon belül válaszolok.
+  email: hello@bartechlabs.com
+  projectTypes:
+    - Weboldal
+    - Webshop
+    - Webalkalmazás
+    - Egyéb

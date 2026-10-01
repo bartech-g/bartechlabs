@@ -1,0 +1,36 @@
+{
+  "skipLink": "Skip to content",
+  "logoLabel": "Bartech Labs — home",
+  "nav": {
+    "label": "Main",
+    "process": "Process",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "lang": {
+    "label": "Language"
+  },
+  "work": {
+    "visit": "visit",
+    "visitLabel": "Visit {name} (opens in a new tab)"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "projectType": "Project type",
+    "idea": "The idea",
+    "honeypot": "Leave this field empty",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Thanks — message received. I'll get back to you soon.",
+    "error": "Something went wrong and the message wasn't sent. Please try again, or email me directly."
+  },
+  "footer": {
+    "social": "Social links",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
+  }
+}

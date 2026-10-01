@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Corner markers sit 4px outside the page; clip (unlike hidden) keeps the header sticky */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply m-0 bg-paper font-sans text-ink antialiased;
+  }
+
+  a {
+    @apply text-ink underline underline-offset-[3px] hover:text-black;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-ink;
+  }
+
+  /* Sections are jumped to from the header nav; clear the sticky header */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 4.5rem;
+    }
+  }
+}
+
+@layer components {
+  .section-marker {
+    @apply absolute -bottom-1 h-[7px] w-[7px] rotate-45 bg-line-strong;
+  }
+
+  .btn {
+    @apply inline-block border px-5 py-[11px] text-[15px] no-underline;
+  }
+
+  .btn-primary {
+    @apply btn border-ink bg-ink text-surface hover:bg-black hover:text-surface;
+  }
+
+  .btn-secondary {
+    @apply btn border-line-strong bg-white hover:border-ink;
+  }
+
+  /* Frosted header background; solid fallback without backdrop-filter */
+  .glass {
+    @apply bg-white/95;
+  }
+
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      @apply bg-white/70 backdrop-blur-md backdrop-saturate-150;
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      @apply bg-white backdrop-blur-none;
+    }
+  }
+
+  .eyebrow {
+    @apply font-mono text-sm text-muted;
+  }
+
+  /* Spam trap: off-screen, skipped by keyboard and screen readers */
+  .hp-field {
+    @apply absolute -left-[9999px] h-px w-px overflow-hidden;
+  }
+}
+
+/*
+ * FormKit, styled to match the design's inputs. Kept outside @layer on purpose:
+ * these classes only exist at runtime, so Tailwind would purge layered rules.
+ */
+.formkit-form {
+  @apply flex flex-col gap-[14px];
+}
+
+.formkit-wrapper {
+  @apply flex flex-col gap-1.5;
+}
+
+.formkit-label {
+  @apply text-sm text-subtle;
+}
+
+.formkit-inner {
+  @apply relative;
+}
+
+.formkit-input:not([type='submit']) {
+  @apply w-full border border-line-strong bg-white px-3 py-2.5 text-[15px] text-ink focus:border-ink;
+}
+
+.formkit-outer[data-invalid] .formkit-input:not([type='submit']) {
+  @apply border-red-700;
+}
+
+textarea.formkit-input {
+  @apply resize-y;
+}
+
+.formkit-messages {
+  @apply m-0 mt-1.5 list-none p-0;
+}
+
+.formkit-message {
+  @apply text-sm text-red-800;
+}
+
+.formkit-outer[data-type='submit'] .formkit-wrapper {
+  @apply items-start;
+}
+
+.formkit-input[type='submit'] {
+  @apply cursor-pointer border border-ink bg-ink px-[22px] py-[11px] text-[15px] text-surface hover:bg-black disabled:cursor-wait disabled:opacity-70;
+}

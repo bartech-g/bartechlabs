@@ -1,0 +1,75 @@
+seo:
+  title: Bartech Labs — freelance full-stack development
+  description: I build web apps from idea to production. Frontend, backend, database, deploy. One person, one invoice.
+
+hero:
+  kicker: bartechlabs.com — freelance full-stack developer
+  heading: I build web apps from idea to production. Frontend, backend, database, deploy. One person, one invoice.
+  ctaPrimary: Start a project
+  ctaSecondary: See work
+
+process:
+  title: Idea → App
+  aside: how a project goes
+  steps:
+    - title: Idea
+      text: You explain the problem. A call, a doc, a napkin sketch — whatever you have.
+    - title: Scope
+      text: I write down what gets built, what doesn't, a timeline and a fixed price.
+    - title: Design
+      text: Wireframes and screens for the core flows. You sign off before code.
+    - title: Build
+      text: Frontend, backend, database. Weekly demo on a live staging link.
+    - title: Launch
+      text: Deploy, domain, monitoring, handover docs. Then support if you want it.
+
+work:
+  title: Work
+  aside: selected references
+  items:
+    - name: Project name
+      what: Booking platform for a clinic
+      stack: Next.js / Postgres
+      year: "2026"
+      url: "#"
+    - name: Project name
+      what: Internal inventory dashboard
+      stack: React / Node / Redis
+      year: "2025"
+      url: "#"
+    - name: Project name
+      what: Public API + docs for a SaaS
+      stack: Python / FastAPI
+      year: "2025"
+      url: "#"
+    - name: Project name
+      what: E-commerce rebuild
+      stack: Next.js / Stripe
+      year: "2024"
+      url: "#"
+
+about:
+  title: About
+  paragraphs:
+    - Bartech Labs is a one-person studio. I take a rough idea, turn it into a clear scope, then design, build and ship it. You talk to the person writing the code.
+    - "Good fit: MVPs, internal tools, dashboards, APIs, rescuing half-finished projects. Not a fit: things that need a team of twenty."
+  stackLabel: stack
+  stack:
+    - label: Frontend
+      value: React, Next.js, TypeScript
+    - label: Backend
+      value: Node.js, Python, REST, GraphQL
+    - label: Data
+      value: PostgreSQL, Redis, Prisma
+    - label: Infra
+      value: Docker, AWS, Vercel, CI/CD
+
+contact:
+  title: Contact
+  intro: Describe the idea in a few lines. I reply within two working days.
+  email: hello@bartechlabs.com
+  projectTypes:
+    - Website
+    - Webshop
+    - Web application
+    - Other

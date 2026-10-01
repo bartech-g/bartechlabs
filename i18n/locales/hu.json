@@ -1,0 +1,36 @@
+{
+  "skipLink": "Ugrás a tartalomra",
+  "logoLabel": "Bartech Labs — kezdőlap",
+  "nav": {
+    "label": "Fő",
+    "process": "Folyamat",
+    "work": "Munkák",
+    "about": "Rólam",
+    "contact": "Kapcsolat",
+    "menu": "Menü"
+  },
+  "lang": {
+    "label": "Nyelv"
+  },
+  "work": {
+    "visit": "megnézem",
+    "visitLabel": "{name} megtekintése (új lapon nyílik meg)"
+  },
+  "form": {
+    "name": "Név",
+    "email": "E-mail",
+    "projectType": "Projekt típusa",
+    "idea": "Az ötlet",
+    "honeypot": "Hagyd üresen ezt a mezőt",
+    "submit": "Küldés",
+    "sending": "Küldés…",
+    "success": "Köszönöm — az üzenet megérkezett. Hamarosan jelentkezem.",
+    "error": "Hiba történt, az üzenet nem ment el. Próbáld újra, vagy írj közvetlenül e-mailt."
+  },
+  "footer": {
+    "social": "Közösségi linkek",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-mail"
+  }
+}

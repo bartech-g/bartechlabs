@@ -1,23 +1,12 @@
-# Nuxt Minimal Starter
+# Bartech Labs website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Portfolio site for Bartech Labs, built with Nuxt 4, Nuxt Content, @nuxtjs/i18n (English and Hungarian), Tailwind CSS, FormKit and nodemailer.
 
 ## Setup
 
-Make sure to install dependencies:
-
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+cp .env.example .env   # fill in SMTP credentials for the contact form
 ```
 
 ## Development Server
@@ -25,51 +14,19 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+
+Without a `.env` file, the contact form sends to an SMTP server on `localhost:1025`, such as [Mailpit](https://mailpit.axllent.org/).
+
+## Editing content
+
+- Page copy is in `content/en/home.yml` and `content/hu/home.yml`.
+- UI strings (labels, buttons, messages) are in `i18n/locales/en.json` and `i18n/locales/hu.json`.
 
 ## Production
 
-Build the application for production:
-
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
