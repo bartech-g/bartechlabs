@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@formkit/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
-    'nuxt-nodemailer'
+    'nuxt-nodemailer',
+    '@nuxtjs/sitemap'
   ],
 
   app: {
@@ -28,6 +29,17 @@ export default defineNuxtConfig({
     }
   },
 
+  // Used by @nuxtjs/sitemap; keep in sync with i18n.baseUrl
+  site: {
+    url: 'https://www.bartechlabs.com',
+    name: 'Bartech Labs'
+  },
+
+  // One sitemap.xml with hreflang alternates instead of a per-locale sitemap index
+  sitemap: {
+    sitemaps: false
+  },
+
   runtimeConfig: {
     // Recipient of contact form messages (NUXT_CONTACT_TO)
     contactTo: 'hello@bartechlabs.com'
@@ -38,7 +50,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: 'https://bartechlabs.com',
+    baseUrl: 'https://www.bartechlabs.com',
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
     locales: [

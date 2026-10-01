@@ -15,7 +15,12 @@ useSeoMeta({
   title: () => page.value?.seo.title,
   description: () => page.value?.seo.description,
   ogTitle: () => page.value?.seo.title,
-  ogDescription: () => page.value?.seo.description
+  ogDescription: () => page.value?.seo.description,
+  ogType: 'website',
+  ogSiteName: 'Bartech Labs',
+  twitterCard: 'summary',
+  twitterTitle: () => page.value?.seo.title,
+  twitterDescription: () => page.value?.seo.description
 })
 </script>
 

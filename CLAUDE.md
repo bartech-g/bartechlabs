@@ -16,6 +16,7 @@ npm run dev          # dev server at http://localhost:3000
 npm run build        # production build -> .output/
 npm run preview      # preview the production build
 npx eslint .         # lint (there is no npm lint script)
+npm run typecheck    # vue-tsc type check (nuxt typecheck)
 ```
 
 There is no test suite.
