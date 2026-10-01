@@ -1,24 +1,23 @@
 <script setup lang="ts">
-defineProps<{ projectTypes: string[] }>()
+defineProps<{ projectTypes: string[] }>();
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n();
 
-const status = ref<'idle' | 'sent' | 'error'>('idle')
-const successRef = ref<HTMLElement>()
+const status = ref<"idle" | "sent" | "error">("idle");
+const successRef = ref<HTMLElement>();
 
 async function submit(data: Record<string, unknown>) {
-  status.value = 'idle'
+  status.value = "idle";
   try {
-    await $fetch('/api/contact', {
-      method: 'POST',
-      body: { ...data, locale: locale.value }
-    })
-    status.value = 'sent'
-    await nextTick()
-    successRef.value?.focus()
-  }
-  catch {
-    status.value = 'error'
+    await $fetch("/api/contact", {
+      method: "POST",
+      body: { ...data, locale: locale.value },
+    });
+    status.value = "sent";
+    await nextTick();
+    successRef.value?.focus();
+  } catch {
+    status.value = "error";
   }
 }
 </script>
@@ -31,7 +30,7 @@ async function submit(data: Record<string, unknown>) {
       tabindex="-1"
       class="border border-line-strong bg-white p-6 text-base leading-normal"
     >
-      {{ t('form.success') }}
+      {{ t("form.success") }}
     </div>
     <template v-else>
       <FormKit
@@ -70,16 +69,20 @@ async function submit(data: Record<string, unknown>) {
         <div class="hp-field" aria-hidden="true">
           <FormKit
             type="text"
-            name="website"
+            name="hp_field"
             :label="t('form.honeypot')"
             tabindex="-1"
-            autocomplete="off"
+            autocomplete="new-password"
           />
         </div>
         <FormKit type="submit" :label="t('form.submit')" />
       </FormKit>
-      <p v-if="status === 'error'" role="alert" class="m-0 mt-4 text-sm text-red-800">
-        {{ t('form.error') }}
+      <p
+        v-if="status === 'error'"
+        role="alert"
+        class="m-0 mt-4 text-sm text-red-800"
+      >
+        {{ t("form.error") }}
       </p>
     </template>
   </div>

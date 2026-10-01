@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   const body = await readBody<Record<string, unknown>>(event) ?? {}
 
   // Honeypot: bots fill every field. Pretend it worked.
-  if (field(body, 'website', 200)) {
+  if (field(body, 'hp_field', 200)) {
     return { ok: true }
   }
 
@@ -25,7 +25,6 @@ export default defineEventHandler(async (event) => {
 
   const { contactTo } = useRuntimeConfig(event)
   const { sendMail } = useNodeMailer()
-
   try {
     await sendMail({
       to: contactTo,
