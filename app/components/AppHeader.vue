@@ -19,15 +19,25 @@ function onKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') closeMenu(true)
 }
 
+// The mobile menu doesn't exist at md and up; close it when the viewport grows
+let desktopQuery: MediaQueryList | undefined
+
+function onBreakpoint(event: MediaQueryListEvent) {
+  if (event.matches) closeMenu()
+}
+
 onMounted(() => {
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
   window.addEventListener('keydown', onKeydown)
+  desktopQuery = window.matchMedia('(min-width: 768px)')
+  desktopQuery.addEventListener('change', onBreakpoint)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll)
   window.removeEventListener('keydown', onKeydown)
+  desktopQuery?.removeEventListener('change', onBreakpoint)
 })
 </script>
 

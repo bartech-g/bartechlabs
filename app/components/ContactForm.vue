@@ -79,7 +79,6 @@ async function submit(data: Record<string, unknown>) {
       </FormKit>
       <p
         v-if="status === 'error'"
-        role="alert"
         class="m-0 mt-4 text-sm text-red-800"
       >
         {{ t("form.error") }}
