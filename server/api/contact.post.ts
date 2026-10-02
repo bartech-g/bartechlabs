@@ -5,7 +5,35 @@ function field(body: Record<string, unknown>, key: string, max: number) {
   return value.slice(0, max)
 }
 
+// In-memory per-IP limit; resets on restart and isn't shared between instances
+const RATE_LIMIT = 5
+const RATE_WINDOW_MS = 10 * 60 * 1000
+const hits = new Map<string, number[]>()
+
+function isRateLimited(ip: string) {
+  const now = Date.now()
+  const recent = (hits.get(ip) ?? []).filter(time => now - time < RATE_WINDOW_MS)
+  if (recent.length >= RATE_LIMIT) {
+    hits.set(ip, recent)
+    return true
+  }
+  recent.push(now)
+  hits.set(ip, recent)
+  // Drop stale entries so the map can't grow without bound
+  if (hits.size > 10_000) {
+    for (const [key, times] of hits) {
+      if (times.every(time => now - time >= RATE_WINDOW_MS)) hits.delete(key)
+    }
+  }
+  return false
+}
+
 export default defineEventHandler(async (event) => {
+  const ip = getRequestIP(event, { xForwardedFor: true }) ?? 'unknown'
+  if (isRateLimited(ip)) {
+    throw createError({ statusCode: 429, statusMessage: 'Too many requests' })
+  }
+
   const body = await readBody<Record<string, unknown>>(event) ?? {}
 
   // Honeypot: bots fill every field. Pretend it worked.

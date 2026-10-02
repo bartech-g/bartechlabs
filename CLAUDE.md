@@ -15,7 +15,7 @@ npm install          # also runs `nuxt prepare` (postinstall), which generates .
 npm run dev          # dev server at http://localhost:3000
 npm run build        # production build -> .output/
 npm run preview      # preview the production build
-npx eslint .         # lint (there is no npm lint script)
+npm run lint         # eslint
 npm run typecheck    # vue-tsc type check (nuxt typecheck)
 ```
 
@@ -37,7 +37,8 @@ There is no test suite.
 ### Contact form
 - `app/components/ContactForm.vue` is a FormKit form. Field styling is in `app/assets/css/main.css`, using `@apply` on the `.formkit-*` classes. No FormKit theme package is used. Those rules have to stay outside `@layer`: the class names only exist at runtime, so Tailwind would purge them from a layer.
 - The form POSTs to `server/api/contact.post.ts`. The handler:
-  - checks a honeypot field named `website`; if it's filled, it returns a fake success without sending
+  - rate-limits each IP (5 requests per 10 minutes, in memory) and returns 429 when exceeded
+  - checks a honeypot field named `hp_field`; if it's filled, it returns a fake success without sending
   - validates the fields
   - sends with `useNodeMailer().sendMail` to `runtimeConfig.contactTo`, with reply-to set to the sender
 - SMTP settings come from `NUXT_NODEMAILER_*` env vars (see `.env.example`). nuxt-nodemailer only applies env overrides for keys that already exist in the `nodemailer` block of `nuxt.config.ts`. That block defaults to a local unauthenticated SMTP server on `localhost:1025` (Mailpit or similar) for development.
