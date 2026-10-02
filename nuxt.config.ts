@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     'nuxt-nodemailer',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@vercel/analytics'
   ],
 
   app: {
