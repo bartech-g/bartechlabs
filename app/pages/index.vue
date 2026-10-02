@@ -1,14 +1,18 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale } = useI18n();
 
 const { data: page } = await useAsyncData(
   () => `home-${locale.value}`,
-  () => queryCollection(locale.value === 'hu' ? 'home_hu' : 'home_en').first(),
-  { watch: [locale] }
-)
+  () => queryCollection(locale.value === "hu" ? "home_hu" : "home_en").first(),
+  { watch: [locale] },
+);
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Page not found",
+    fatal: true,
+  });
 }
 
 useSeoMeta({
@@ -16,16 +20,17 @@ useSeoMeta({
   description: () => page.value?.seo.description,
   ogTitle: () => page.value?.seo.title,
   ogDescription: () => page.value?.seo.description,
-  ogType: 'website',
-  ogSiteName: 'Bartech Labs',
-  twitterCard: 'summary',
+  ogType: "website",
+  ogSiteName: "Bartech Labs",
+  twitterCard: "summary",
   twitterTitle: () => page.value?.seo.title,
-  twitterDescription: () => page.value?.seo.description
-})
+  twitterDescription: () => page.value?.seo.description,
+});
 </script>
 
 <template>
   <div v-if="page">
+    <AlertSite :alert="page.alert" />
     <HeroSection :hero="page.hero" />
     <ProcessSection :process="page.process" />
     <WorkSection :work="page.work" />

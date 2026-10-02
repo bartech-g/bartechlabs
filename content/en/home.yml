@@ -1,9 +1,12 @@
 seo:
-  title: Bartech Labs — freelance full-stack development
+  title: Bartech Labs - freelance full-stack development
   description: I build web apps from idea to production. Frontend, backend, database, deploy. One person, one invoice.
 
+alert:
+  title: This site is work in progress
+
 hero:
-  kicker: bartechlabs.com — freelance full-stack developer
+  kicker: bartechlabs.com - freelance full-stack development
   heading: I build web apps from idea to production. Frontend, backend, database, deploy. One person, one invoice.
   ctaPrimary: Start a project
   ctaSecondary: See work
@@ -13,7 +16,7 @@ process:
   aside: how a project goes
   steps:
     - title: Idea
-      text: You explain the problem. A call, a doc, a napkin sketch — whatever you have.
+      text: You explain the problem. A call, a doc, a napkin sketch - whatever you have.
     - title: Scope
       text: I write down what gets built, what doesn't, a timeline and a fixed price.
     - title: Design

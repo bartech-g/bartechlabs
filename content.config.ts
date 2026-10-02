@@ -5,6 +5,9 @@ const homeSchema = z.object({
     title: z.string(),
     description: z.string()
   }),
+  alert: z.object({
+    title: z.string()
+  }),
   hero: z.object({
     kicker: z.string(),
     heading: z.string(),

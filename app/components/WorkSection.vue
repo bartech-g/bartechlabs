@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import type { HomeEnCollectionItem } from '@nuxt/content'
+import type { HomeEnCollectionItem } from "@nuxt/content";
 
-defineProps<{ work: HomeEnCollectionItem['work'] }>()
+defineProps<{ work: HomeEnCollectionItem["work"] }>();
 </script>
 
 <template>
-  <section id="work" aria-labelledby="work-heading" class="relative border-b border-line">
+  <section
+    id="work"
+    aria-labelledby="work-heading"
+    class="relative border-b border-line"
+  >
     <CornerMarkers />
     <SectionHeader id="work-heading" :title="work.title" :aside="work.aside" />
     <ul class="m-0 list-none p-0">
@@ -23,8 +27,11 @@ defineProps<{ work: HomeEnCollectionItem['work'] }>()
             :href="item.url"
             target="_blank"
             rel="noopener"
-            :aria-label="$t('work.visitLabel', { name: `${item.name} — ${item.what}` })"
-          >{{ $t('work.visit') }} <span aria-hidden="true">↗</span></a>
+            :aria-label="
+              $t('work.visitLabel', { name: `${item.name} - ${item.what}` })
+            "
+            >{{ $t("work.visit") }} <span aria-hidden="true">↗</span></a
+          >
         </div>
       </li>
     </ul>

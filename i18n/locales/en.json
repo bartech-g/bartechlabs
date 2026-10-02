@@ -1,6 +1,6 @@
 {
   "skipLink": "Skip to content",
-  "logoLabel": "Bartech Labs — home",
+  "logoLabel": "Bartech Labs - home",
   "nav": {
     "label": "Main",
     "process": "Process",
@@ -24,7 +24,7 @@
     "honeypot": "Leave this field empty",
     "submit": "Send",
     "sending": "Sending…",
-    "success": "Thanks — message received. I'll get back to you soon.",
+    "success": "Thanks - message received. I'll get back to you soon.",
     "error": "Something went wrong and the message wasn't sent. Please try again, or email me directly."
   },
   "footer": {

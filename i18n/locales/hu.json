@@ -1,6 +1,6 @@
 {
   "skipLink": "Ugrás a tartalomra",
-  "logoLabel": "Bartech Labs — kezdőlap",
+  "logoLabel": "Bartech Labs - kezdőlap",
   "nav": {
     "label": "Fő",
     "process": "Folyamat",
@@ -24,7 +24,7 @@
     "honeypot": "Hagyd üresen ezt a mezőt",
     "submit": "Küldés",
     "sending": "Küldés…",
-    "success": "Köszönöm — az üzenet megérkezett. Hamarosan jelentkezem.",
+    "success": "Köszönöm - az üzenet megérkezett. Hamarosan jelentkezem.",
     "error": "Hiba történt, az üzenet nem ment el. Próbáld újra, vagy írj közvetlenül e-mailt."
   },
   "footer": {
